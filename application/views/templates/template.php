@@ -57,13 +57,13 @@
             <div class="container-fluid">
                <!-- Page title -->
                <ul class="nav navbar-nav list-inline navbar-left">
-                  <li class="list-inline-item">
+                  <!-- <li class="list-inline-item">
                      <button class="button-menu-mobile open-left">
                         <i class="ti-layout-grid2"></i>
                      </button>
-                  </li>
+                  </li> -->
                   <li class="list-inline-item">
-                     <h4 class="page-title">Dashboard</h4>
+                     <h4 class="page-title"><?= $headline ?></h4>
                   </li>
                </ul>
                <nav class="navbar-custom">
@@ -111,19 +111,21 @@
       <!-- Top Bar End -->
 
 
-      <!-- ========== Left Sidebar Start ========== -->
+      <!-- Left Sidebar-->
+      <?php
+      $this->db->select('*');
+      $this->db->from('tb_menu');
+      $data['menu'] = $this->db->get()->result_array();
+      ?>
 
       <div class="left side-menu">
          <div class="sidebar-inner slimscrollleft">
             <!--- Sidemenu -->
             <div id="sidebar-menu">
                <ul>
-
-                  <li class="has_sub">
-                     <a class="waves-effect"><i class="fas fa-tachometer-alt"></i> <span> Dashboard
-                           <!-- </span> <i class="mdi mdi-chevron-right"></i></a> -->
-                  </li>
-
+                  <?php foreach ($data['menu'] as $mn) : ?>
+                     <li><a href="<?= base_url($mn['link_menu'])  ?>"> <i class="<?= $mn['icon_menu'] ?>"></i><?= $mn['nama_menu'] ?></a></li>
+                  <?php endforeach; ?>
                </ul>
                <div class="clearfix"></div>
             </div>
