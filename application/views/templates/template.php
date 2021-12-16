@@ -6,20 +6,20 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <meta name="description" content="Sertifikat Website">
    <meta name="author" content="Belostemas">
-   <link rel="shortcut icon" href="assets/images/favlogo.png">
+   <link rel="shortcut icon" href="<?= base_url() ?>assets/images/favlogo.png">
    <title>Sertifikat Website</title>
    <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,500,700" rel="stylesheet">
    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karla:400,700">
    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rancho">
 
    <!--Morris Chart CSS -->
-   <link rel="stylesheet" href="assets/plugins/morris/morris.css">
+   <link rel="stylesheet" href="<?= base_url() ?>assets/plugins/morris/morris.css">
    <!-- App css -->
-   <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-   <link href="assets/css/icons.css" rel="stylesheet" type="text/css" />
-   <link href="assets/css/style.css" rel="stylesheet" type="text/css" />
+   <link href="<?= base_url() ?>assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+   <link href="<?= base_url() ?>assets/css/icons.css" rel="stylesheet" type="text/css" />
+   <link href="<?= base_url() ?>assets/css/style.css" rel="stylesheet" type="text/css" />
 
-   <script src="assets/js/modernizr.min.js"></script>
+   <script src="<?= base_url() ?>assets/js/modernizr.min.js"></script>
 
    <script src="https://kit.fontawesome.com/6410f806cd.js" crossorigin="anonymous"></script>
 
@@ -230,28 +230,28 @@
 
 
    <!-- jQuery  -->
-   <script src="assets/js/jquery.min.js"></script>
-   <script src="assets/js/popper.min.js"></script>
-   <script src="assets/js/bootstrap.min.js"></script>
-   <script src="assets/js/detect.js"></script>
-   <script src="assets/js/fastclick.js"></script>
-   <script src="assets/js/jquery.blockUI.js"></script>
-   <script src="assets/js/waves.js"></script>
-   <script src="assets/js/jquery.nicescroll.js"></script>
-   <script src="assets/js/jquery.slimscroll.js"></script>
-   <script src="assets/js/jquery.scrollTo.min.js"></script>
+   <script src="<?= base_url() ?>assets/js/jquery.min.js"></script>
+   <script src="<?= base_url() ?>assets/js/popper.min.js"></script>
+   <script src="<?= base_url() ?>assets/js/bootstrap.min.js"></script>
+   <script src="<?= base_url() ?>assets/js/detect.js"></script>
+   <script src="<?= base_url() ?>assets/js/fastclick.js"></script>
+   <script src="<?= base_url() ?>assets/js/jquery.blockUI.js"></script>
+   <script src="<?= base_url() ?>assets/js/waves.js"></script>
+   <script src="<?= base_url() ?>assets/js/jquery.nicescroll.js"></script>
+   <script src="<?= base_url() ?>assets/js/jquery.slimscroll.js"></script>
+   <script src="<?= base_url() ?>assets/js/jquery.scrollTo.min.js"></script>
 
    <!--Morris Chart-->
-   <script src="assets/plugins/morris/morris.min.js"></script>
-   <script src="assets/plugins/raphael/raphael-min.js"></script>
+   <script src="<?= base_url() ?>assets/plugins/morris/morris.min.js"></script>
+   <script src="<?= base_url() ?>assets/plugins/raphael/raphael-min.js"></script>
 
 
    <!-- App js -->
-   <script src="assets/js/jquery.core.js"></script>
-   <script src="assets/js/jquery.app.js"></script>
+   <script src="<?= base_url() ?>assets/js/jquery.core.js"></script>
+   <script src="<?= base_url() ?>assets/js/jquery.app.js"></script>
 
-   <script src="assets/js/main.js"></script>
-   <script src="assets/js/pages/dashboard1.js"></script>
+   <script src="<?= base_url() ?>assets/js/main.js"></script>
+   <script src="<?= base_url() ?>assets/js/pages/dashboard1.js"></script>
 
 </body>
 
