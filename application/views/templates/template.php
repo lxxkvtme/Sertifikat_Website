@@ -118,7 +118,7 @@
       <?php
       $this->db->select('*');
       $this->db->from('tb_menu');
-      $data['menu'] = $this->db->get()->result_array();
+      $menu = $this->db->get()->result_array();
       ?>
 
       <div class="left side-menu">
@@ -126,7 +126,7 @@
             <!--- Sidemenu -->
             <div id="sidebar-menu">
                <ul>
-                  <?php foreach ($data['menu'] as $mn) : ?>
+                  <?php foreach ($menu as $mn) : ?>
                      <li><a href="<?= base_url($mn['link_menu'])  ?>"> <i class="<?= $mn['icon_menu'] ?>"></i><?= $mn['nama_menu'] ?></a></li>
                   <?php endforeach; ?>
                </ul>
