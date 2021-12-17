@@ -15,6 +15,7 @@
    <!--Morris Chart CSS -->
    <link rel="stylesheet" href="<?= base_url() ?>assets/plugins/morris/morris.css">
    <!-- App css -->
+   <link href="<?= base_url() ?>assets/css/dataTables.min.css" rel="stylesheet" type="text/css" />
    <link href="<?= base_url() ?>assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
    <link href="<?= base_url() ?>assets/css/icons.css" rel="stylesheet" type="text/css" />
    <link href="<?= base_url() ?>assets/css/style.css" rel="stylesheet" type="text/css" />
@@ -37,6 +38,8 @@
 </head>
 
 <body class="fixed-left">
+
+   <script src="<?= base_url() ?>assets/js/jquery.min.js"></script>
    <div id="droba-loader">
       <div class="loader"></div>
    </div>
@@ -232,7 +235,7 @@
 
 
    <!-- jQuery  -->
-   <script src="<?= base_url() ?>assets/js/jquery.min.js"></script>
+   <script src="<?= base_url() ?>assets/js/dataTables.min.js"></script>
    <script src="<?= base_url() ?>assets/js/popper.min.js"></script>
    <script src="<?= base_url() ?>assets/js/bootstrap.min.js"></script>
    <script src="<?= base_url() ?>assets/js/detect.js"></script>
