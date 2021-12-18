@@ -13,4 +13,18 @@ class M_Acara extends CI_Model
       $this->db->insert('tb_acara', $data);
       return TRUE;
    }
+
+   public function deleteAcara($id_acara)
+   {
+      $this->db->where('id_acara', $id_acara);
+      $this->db->delete('tb_acara');
+   }
+
+
+   public function editAcara($data, $id_acara)
+   {
+      $this->db->where('id_acara', $id_acara);
+      $this->db->update('tb_acara', $data);
+      return TRUE;
+   }
 }

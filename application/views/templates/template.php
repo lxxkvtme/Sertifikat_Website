@@ -21,9 +21,16 @@
    <link href="<?= base_url() ?>assets/css/style.css" rel="stylesheet" type="text/css" />
 
    <script src="<?= base_url() ?>assets/js/modernizr.min.js"></script>
+   <script src="<?= base_url() ?>assets/js/jquery-3.6.0.js"></script>
+   <script src="https://kit.fontawesome.com/6410f806cd.js" crossorigin="anonymous"></script>
 
    <script src="https://kit.fontawesome.com/6410f806cd.js" crossorigin="anonymous"></script>
 
+   <!-- data table -->
+   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.css">
+
+   <!-- Datepicker -->
+   <link rel="stylesheet" href="<?= base_url('assets/datepicker/dist/css/bootstrap-datepicker.min.css'); ?>">
 
    <style>
       .logo h3 {
@@ -78,20 +85,6 @@
                         </form>
                      </li>
                      <li>
-                        <!-- Notification -->
-                        <div class="notification-box">
-                           <ul class="list-inline mb-0">
-                              <li>
-                                 <a href="javascript:void(0);" class="right-bar-toggle">
-                                    <i class="mdi mdi-bell-outline"></i>
-                                    <div class="noti-dot">
-                                       <span class="pulse"></span>
-                                    </div>
-                                 </a>
-                              </li>
-                           </ul>
-                        </div>
-                        <!-- End Notification bar -->
                      </li>
                      <li class="dropdown dropslide">
                         <a class="nav-link" href="index.html#" id="navbarDropdownProfile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -116,6 +109,9 @@
 
       <!-- Left Sidebar-->
       <?php
+
+      $this->db->get('tb_menu')->result_array();
+
       $this->db->select('*');
       $this->db->from('tb_menu');
       $menu = $this->db->get()->result_array();
@@ -123,7 +119,6 @@
 
       <div class="left side-menu">
          <div class="sidebar-inner slimscrollleft">
-            <!--- Sidemenu -->
             <div id="sidebar-menu">
                <ul>
                   <?php foreach ($menu as $mn) : ?>
@@ -132,131 +127,62 @@
                </ul>
                <div class="clearfix"></div>
             </div>
-            <!-- Sidebar -->
-            <div class="clearfix"></div>
+
          </div>
+         <!-- Left Sidebar End -->
+
       </div>
-      <!-- Left Sidebar End -->
-
-      <!-- Right Sidebar -->
-      <div class="side-bar right-bar">
-         <h4 class="mt-3">Notifications</h4>
-         <div class="notification-list nicescroll">
-            <ul class="list-group list-no-border user-list">
-               <li class="list-group-item">
-                  <a href="index.html#" class="user-list-item">
-                     <div class="icon bg-info">
-                        <i class="mdi mdi-account"></i>
-                     </div>
-                     <div class="user-desc">
-                        <span class="name">New Signup</span>
-                        <span class="desc">There are new settings available</span>
-                        <span class="time">5 hours ago</span>
-                     </div>
-                  </a>
-               </li>
-               <li class="list-group-item">
-                  <a href="index.html#" class="user-list-item">
-                     <div class="icon bg-info">
-                        <i class="mdi mdi-comment"></i>
-                     </div>
-                     <div class="user-desc">
-                        <span class="name">New Message received</span>
-                        <span class="desc">There are new settings available</span>
-                        <span class="time">1 day ago</span>
-                     </div>
-                  </a>
-               </li>
-               <li class="list-group-item">
-                  <a href="index.html#" class="user-list-item">
-                     <div class="icon bg-info">
-                        <i class="mdi mdi-settings"></i>
-                     </div>
-                     <div class="user-desc">
-                        <span class="name">Settings</span>
-                        <span class="desc">There are new settings available</span>
-                        <span class="time">1 day ago</span>
-                     </div>
-                  </a>
-               </li>
-               <li class="list-group-item">
-                  <a href="index.html#" class="user-list-item">
-                     <div class="icon bg-info">
-                        <i class="mdi mdi-account"></i>
-                     </div>
-                     <div class="user-desc">
-                        <span class="name">New Signup</span>
-                        <span class="desc">There are new settings available</span>
-                        <span class="time">2 hours ago</span>
-                     </div>
-                  </a>
-               </li>
-               <li class="list-group-item">
-                  <a href="index.html#" class="user-list-item">
-                     <div class="icon bg-info">
-                        <i class="mdi mdi-comment"></i>
-                     </div>
-                     <div class="user-desc">
-                        <span class="name">New Message received</span>
-                        <span class="desc">There are new settings available</span>
-                        <span class="time">2 day ago</span>
-                     </div>
-                  </a>
-               </li>
-               <li class="list-group-item">
-                  <a href="index.html#" class="user-list-item">
-                     <div class="icon bg-info">
-                        <i class="mdi mdi-settings"></i>
-                     </div>
-                     <div class="user-desc">
-                        <span class="name">Settings</span>
-                        <span class="desc">There are new settings available</span>
-                        <span class="time">2 day ago</span>
-                     </div>
-                  </a>
-               </li>
-
-            </ul>
-         </div>
-      </div>
-      <!-- /Right-bar -->
-
-   </div>
-   <!-- END wrapper -->
+      <!-- END wrapper -->
 
 
-   <?= $contents; ?>
+      <?= $contents; ?>
 
 
-   <!-- footer -->
-   <footer class="footer text-right">
-      2021 - Website Sertifikat
-   </footer>
+      <!-- footer -->
+      <footer class="footer text-right">
+         2021 - Website Sertifikat
+      </footer>
 
 
-   <!-- jQuery  -->
-   <script src="<?= base_url() ?>assets/js/dataTables.min.js"></script>
-   <script src="<?= base_url() ?>assets/js/popper.min.js"></script>
-   <script src="<?= base_url() ?>assets/js/bootstrap.min.js"></script>
-   <script src="<?= base_url() ?>assets/js/detect.js"></script>
-   <script src="<?= base_url() ?>assets/js/fastclick.js"></script>
-   <script src="<?= base_url() ?>assets/js/jquery.blockUI.js"></script>
-   <script src="<?= base_url() ?>assets/js/waves.js"></script>
-   <script src="<?= base_url() ?>assets/js/jquery.nicescroll.js"></script>
-   <script src="<?= base_url() ?>assets/js/jquery.slimscroll.js"></script>
-   <script src="<?= base_url() ?>assets/js/jquery.scrollTo.min.js"></script>
+      <!-- jQuery  -->
+      <script src="<?= base_url() ?>assets/js/dataTables.min.js"></script>
+      <script src="<?= base_url() ?>assets/js/popper.min.js"></script>
+      <script src="<?= base_url() ?>assets/js/bootstrap.min.js"></script>
+      <script src="<?= base_url() ?>assets/js/detect.js"></script>
+      <script src="<?= base_url() ?>assets/js/fastclick.js"></script>
+      <script src="<?= base_url() ?>assets/js/jquery.blockUI.js"></script>
+      <script src="<?= base_url() ?>assets/js/waves.js"></script>
+      <script src="<?= base_url() ?>assets/js/jquery.nicescroll.js"></script>
+      <script src="<?= base_url() ?>assets/js/jquery.slimscroll.js"></script>
+      <script src="<?= base_url() ?>assets/js/jquery.scrollTo.min.js"></script>
 
-   <!--Morris Chart-->
-   <script src="<?= base_url() ?>assets/plugins/morris/morris.min.js"></script>
-   <script src="<?= base_url() ?>assets/plugins/raphael/raphael-min.js"></script>
+      <!--Morris Chart-->
+      <script src="<?= base_url() ?>assets/plugins/morris/morris.min.js"></script>
+      <script src="<?= base_url() ?>assets/plugins/raphael/raphael-min.js"></script>
 
 
-   <!-- App js -->
-   <script src="<?= base_url() ?>assets/js/jquery.core.js"></script>
-   <script src="<?= base_url() ?>assets/js/jquery.app.js"></script>
+      <!-- App js -->
+      <script src="<?= base_url() ?>assets/js/jquery.core.js"></script>
+      <script src="<?= base_url() ?>assets/js/jquery.app.js"></script>
 
-   <script src="<?= base_url() ?>assets/js/main.js"></script>
-   <script src="<?= base_url() ?>assets/js/pages/dashboard1.js"></script>
+      <script src="<?= base_url() ?>assets/js/main.js"></script>
+      <script src="<?= base_url() ?>assets/js/pages/dashboard1.js"></script>
+
+      <!-- datepicker -->
+      <script src="<?= base_url('assets/datepicker/dist/js/bootstrap-datepicker.min.js'); ?>"></script>
+      <script src="<?= base_url('assets/datepicker/dist/locales/bootstrap-datepicker.id.min.js'); ?>"></script>
+
+      <script>
+         // datepicker
+         $(function(a) {
+            $('.datepicker').datepicker({
+               format: 'dd MM yyyy',
+               language: 'en',
+               autoclose: true,
+               // todayHighlight: true,
+            });
+         });
+      </script>
 
 </body>
 
