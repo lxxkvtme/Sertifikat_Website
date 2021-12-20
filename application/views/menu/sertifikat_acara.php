@@ -5,6 +5,8 @@
 
           <a href="" class="btn btn-gradient mb-3" data-toggle="modal" data-target="#addAcara" style="background-color: #373854; color:white;"><i class="fas fa-plus"></i> Tambah Data</a>
 
+          <a href="<?= base_url('Laporan/index') ?>" class="btn btn-gradient" style="background-color: #373854; color:white; margin-top: -16px" target=" _blank"><i class="fas fa-file-pdf"></i> Pdf</a>
+
           <table class="table table-striped" id="tableAcara">
              <thead>
                 <tr>
